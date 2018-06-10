@@ -30,7 +30,7 @@ $res = $client->ListTrades($req);
 print_r($res);
 usleep(500000);
 
-$client->setAuth("", "");
+$client->setAuth(getenv("LUNO_API_KEY"), getenv("LUNO_API_SECRET"));
 
 $req = new Luno\Request\GetBalances;
 $res = $client->GetBalances($req);
